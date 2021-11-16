@@ -17,7 +17,7 @@ add_executable(Template ${SOURCE_FILES} ${INCLUDE_FILES})
 
 # TODO Describe the difference between PUBLIC, PRIVATE, and INTERFACE
 target_link_libraries(Template
-    PUBLIC HelloWorld
+    PUBLIC HelloWorld MyMath
     PRIVATE
 )
 

@@ -12,6 +12,8 @@ configure_file(src-trees/app/include/main.h.in include/main.h)
 # add the HelloWorld library
 add_subdirectory(src-trees/helloworld)
 
+add_subdirectory(src-trees/mymath)
+
 # add the Template executable
 add_subdirectory(src-trees/app)
 
