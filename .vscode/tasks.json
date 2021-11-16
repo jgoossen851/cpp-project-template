@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "type": "shell",
+        "label": "g++ build active file",
+         "command": "/usr/bin/g++",
+        "args": ["-g", "${file}", "-o", "${fileDirname}/${fileBasenameNoExtension}"],
+        "options": {
+          "cwd": "/usr/bin"
+        },
+        "group": "build",
+      },
+      {
+        "type": "shell",
+        "label": "cmake build active file",
+        "command": "/usr/bin/cmake",
+        "args": ["-V", "--build", "${workspaceFolder}/build"],
+        "options": {
+          "cwd": "/usr/bin"
+        },
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      },
+    ]
+  }
