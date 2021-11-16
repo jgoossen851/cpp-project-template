@@ -14,11 +14,11 @@ int main(int argc, char* argv[]) {
   }
   
   // Print greeting
-  sayHelloWorld();
-  sayWelcome(argv[1]);
+  helloworld::sayHelloWorld();
+  helloworld::sayWelcome(argv[1]);
 
   // Do some math
-  double length = norm(1, 2, 3);
+  double length = mymath::norm(1, 2, 3);
   std::cout << "The length of the vector (1,2,3) is " << length << std::endl;
   
   return 0;

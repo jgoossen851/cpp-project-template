@@ -1,4 +1,8 @@
 #include <iostream>
 
-int sayHelloWorld(void);
-int sayWelcome(char* name);
+namespace helloworld {
+
+  int sayHelloWorld(void);
+  int sayWelcome(char* name);
+
+}
