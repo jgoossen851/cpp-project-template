@@ -32,3 +32,6 @@ target_include_directories("${TARGET_NAME}"
 target_link_libraries("${TARGET_NAME}"
     PUBLIC HelloWorld MyMath
 )
+
+# If install target is built, create a local installation of target
+install(TARGETS "${TARGET_NAME}" DESTINATION bin)
