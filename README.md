@@ -10,7 +10,7 @@ The modifications to the Pitchfork standard allow the user to have some preferen
 | ***tests***    | test, testing                                                |
 | ***examples*** | example, samples                                             |
 | external       | extern, third-party, deps, dependencies, *exogenous*         |
-| **data**       | *res*, resources, dat                                        |
+| ***data***     | res, resources, dat                                          |
 | ***tools***    | scripts                                                      |
 | **docs**       | *doc*, documentation                                         |
 | ***src***      | source                                                       |
