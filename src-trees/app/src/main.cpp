@@ -1,5 +1,6 @@
 #include <iostream>
 #include "main.h"
+#include "helloworld.h"
 
 int main(int argc, char* argv[]) {
   if (argc < 2) {
@@ -12,8 +13,8 @@ int main(int argc, char* argv[]) {
   }
   
   // Print greeting
-  std::cout << "Hello World!" << std::endl;
-  std::cout << "Welcome, " << argv[1] << "!" << std::endl;
+  sayHelloWorld();
+  sayWelcome(argv[1]);
   
   return 0;
 }
