@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.5.1)
 
+# Set the CMake target name and files for this subdirectory
+set(TARGET_NAME Template)
+
 set(SOURCE_FILES
     src/main.cpp
 )
@@ -7,23 +10,25 @@ set(SOURCE_FILES
 set(INCLUDE_FILES
 )
 
-# TODO Determine if quotes are recommended around variables
-# TODO Set a variable to hold the target name
-# Note: Adds executable at build/src-trees/app/ rather than at build/
-add_executable(Template ${SOURCE_FILES} ${INCLUDE_FILES})
+# Create a new target with the source and header files as dependencies
+add_executable("${TARGET_NAME}" ${SOURCE_FILES} ${INCLUDE_FILES})
 
-# TODO Describe the find_package options
-#find_package(Eigen3 3.3 REQUIRED NO_MODULE)
+# The keywords PUBLIC, PRIVATE, and INTERFACE are used for both Include
+# Directories and Link Libraries.
+# * PUBLIC means that other libraries including or linking thistarget should
+#   also include or link the listed directory.
+# * PRIVATE means that this target must include or link the directory while
+#   other libraries including or linking this target do not.
+# * INTERFACE means that other libraries including or linking this target
+#   should include or link the listed directory while this target does not.
 
-# TODO Describe the difference between PUBLIC, PRIVATE, and INTERFACE
-target_link_libraries(Template
-    PUBLIC HelloWorld MyMath
-    PRIVATE
-)
-
-# Also add the Binary include dir since we have the configured main.h header.
-target_include_directories(Template
+# Specify include directories to use when compiling the given target
+target_include_directories("${TARGET_NAME}"
     PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
-           ${PROJECT_BINARY_DIR}/include
+    PRIVATE ${PROJECT_BINARY_DIR}/include
 )
 
+# Specify libraries or flags to use when linking a given target and/or its dependents
+target_link_libraries("${TARGET_NAME}"
+    PUBLIC HelloWorld MyMath
+)
