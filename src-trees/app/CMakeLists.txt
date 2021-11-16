@@ -7,7 +7,10 @@ set(SOURCE_FILES
     src/main.cpp
 )
 
+configure_file(include/version.h.in ${PROJECT_BINARY_DIR}/include/version.h)
+
 set(INCLUDE_FILES
+    ${PROJECT_BINARY_DIR}/include/version.h
 )
 
 # Create a new target with the source and header files as dependencies

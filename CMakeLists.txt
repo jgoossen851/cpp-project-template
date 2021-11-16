@@ -10,10 +10,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # After a normal build, we can specify the location of various outputs of the
 # build. We put executables and static libraries inside the build directory in
 # bin/ and lib/, respectively.
+# see https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html#output-artifacts
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin")
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib")
 
-configure_file(src-trees/app/include/main.h.in include/main.h)
 
 # add the external library subdirectories
 add_subdirectory(exogenous)

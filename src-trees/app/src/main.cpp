@@ -1,5 +1,5 @@
 #include <iostream>
-#include "main.h"
+#include "version.h"
 #include "helloworld.h"
 #include "mymath.h"
 
