@@ -1,18 +1,17 @@
 cmake_minimum_required(VERSION 3.5.1)
 
 # Set the CMake target name and files for this subdirectory
-set(TARGET_NAME HelloWorld)
+set(TARGET_NAME Template)
 
 set(SOURCE_FILES
-    src/helloworld.cpp
+    src/main.cpp
 )
 
 set(INCLUDE_FILES
-    include/helloworld.h
 )
 
 # Create a new target with the source and header files as dependencies
-add_library("${TARGET_NAME}" STATIC "${SOURCE_FILES}" "${INCLUDE_FILES}")
+add_executable("${TARGET_NAME}" ${SOURCE_FILES} ${INCLUDE_FILES})
 
 # The keywords PUBLIC, PRIVATE, and INTERFACE are used for both Include
 # Directories and Link Libraries.
@@ -26,8 +25,10 @@ add_library("${TARGET_NAME}" STATIC "${SOURCE_FILES}" "${INCLUDE_FILES}")
 # Specify include directories to use when compiling the given target
 target_include_directories("${TARGET_NAME}"
     PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
+    PRIVATE ${PROJECT_BINARY_DIR}/include
 )
 
 # Specify libraries or flags to use when linking a given target and/or its dependents
 target_link_libraries("${TARGET_NAME}"
+    PUBLIC HelloWorld MyMath
 )

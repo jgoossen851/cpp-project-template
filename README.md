@@ -1,3 +1,21 @@
+## Dependencies
+
+This project depends on the following packages:
+
+* [Eigen3](https://eigen.tuxfamily.org/index.php?title=Main_Page)
+  
+  While Eigen is a header-only library, this template project demonstrates how to include the Eigen library as installed by CMake. Download the source for Eigen from the [Git repository](https://gitlab.com/libeigen/eigen.git), then install it to the system using CMake. From the Eigen repository's root directory, run:
+  
+  ```bash
+  mkdir build && cd build/
+  cmake ..
+  sudo make install
+  ```
+  
+  Then, the `Eigen3::Eigen` CMake target should be installed and able to be located using the `find_package()` command as documented in the Eigen documentation, [Using Eigen in CMake Projects](https://eigen.tuxfamily.org/dox/TopicCMakeGuide.html).
+  
+  Alternatively, a project could simply copy the `Eigen/` directory containing the header files to make use of the Eigen library.
+
 ## Layout Convention
 
 This repo uses a modified [Pitchfork Layout (PFL)](https://github.com/vector-of-bool/pitchfork) convention for the project layout. See especially the README link to [the project layout conventions](https://api.csswg.org/bikeshed/?force=1&url=https://raw.githubusercontent.com/vector-of-bool/pitchfork/develop/data/spec.bs) and the [2018 blog post](https://vector-of-bool.github.io/2018/09/16/layout-survey.html).
@@ -10,7 +28,7 @@ The modifications to the Pitchfork standard allow the user to have some preferen
 | ***tests***    | test, testing                                                |
 | ***examples*** | example, samples                                             |
 | external       | extern, third-party, deps, dependencies, *exogenous*         |
-| **data**       | *res*, resources, dat                                        |
+| ***data***     | res, resources, dat                                          |
 | ***tools***    | scripts                                                      |
 | **docs**       | *doc*, documentation                                         |
 | ***src***      | source                                                       |

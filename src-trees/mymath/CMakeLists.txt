@@ -1,18 +1,21 @@
 cmake_minimum_required(VERSION 3.5.1)
 
 # Set the CMake target name and files for this subdirectory
-set(TARGET_NAME HelloWorld)
+set(TARGET_NAME MyMath)
 
 set(SOURCE_FILES
-    src/helloworld.cpp
+    src/mymath.cpp
 )
 
 set(INCLUDE_FILES
-    include/helloworld.h
+    include/mymath.h
 )
 
 # Create a new target with the source and header files as dependencies
 add_library("${TARGET_NAME}" STATIC "${SOURCE_FILES}" "${INCLUDE_FILES}")
+
+# Find an externally provided package and load its package-specific details.
+find_package(Eigen3 3.3 REQUIRED NO_MODULE)
 
 # The keywords PUBLIC, PRIVATE, and INTERFACE are used for both Include
 # Directories and Link Libraries.
@@ -30,4 +33,5 @@ target_include_directories("${TARGET_NAME}"
 
 # Specify libraries or flags to use when linking a given target and/or its dependents
 target_link_libraries("${TARGET_NAME}"
+    PRIVATE Eigen3::Eigen
 )
