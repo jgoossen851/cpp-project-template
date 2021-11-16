@@ -8,7 +8,7 @@
             "name": "cmake build and debug active file",
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}/build/Template",
+            "program": "${workspaceFolder}/build/src-trees/app/Template",
             "args": ["Name"],
             "stopOnEntry": false,
             "cwd": "${workspaceFolder}",
