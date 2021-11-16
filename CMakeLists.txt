@@ -33,3 +33,25 @@ if(NOT TARGET uninstall)
     COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)
 endif()
 
+enable_testing()
+
+# does the application run?
+add_test(NAME Runs COMMAND Template 25)
+
+# does the usage message work?
+add_test(NAME Usage COMMAND Template)
+set_tests_properties(Usage
+  PROPERTIES PASS_REGULAR_EXPRESSION "Usage:.*name"
+)
+
+# define function to simplify adding tests
+function(do_test target arg result)
+  add_test(NAME Comp${arg} COMMAND ${target} ${arg})
+  set_tests_properties(Comp${arg}
+    PROPERTIES PASS_REGULAR_EXPRESSION ${result}
+  )
+endfunction()
+
+# do a bunch of result based tests
+do_test(Template Alpha "Welcome, Alpha!")
+do_test(Template Bravo "Welcome, Bravo!")
