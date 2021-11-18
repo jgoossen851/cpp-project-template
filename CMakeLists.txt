@@ -15,6 +15,9 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib")
 
 configure_file(src-trees/app/include/main.h.in include/main.h)
 
+# add the external library subdirectories
+add_subdirectory(exogenous)
+
 # add the library subdirectories
 add_subdirectory(src-trees/helloworld)
 add_subdirectory(src-trees/mymath)

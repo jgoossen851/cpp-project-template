@@ -1,8 +1,13 @@
 #include <iostream>
 #include "helloworld.h"
+#include "ANSI.hpp"
+
+using namespace srilakshmikanthanp; // ANSI escape sequence wrapper namespace
 
 int helloworld::sayHelloWorld(void) {
-  std::cout << "Hello World!" << std::endl;
+  std::cout << ansi::bold
+            << "Hello World!"
+            << ansi::reset << std::endl;
   return 0;
 }
 
