@@ -16,6 +16,16 @@ This project depends on the following packages:
   
   Alternatively, a project could simply copy the `Eigen/` directory containing the header files to make use of the Eigen library.
 
+## Submodules
+
+This repository contains Git Submodules. After cloning the repository, run
+
+```bash
+git submodule update --init --recursive
+```
+
+to initialize and update the submodules.
+
 ## Layout Convention
 
 This repo uses a modified [Pitchfork Layout (PFL)](https://github.com/vector-of-bool/pitchfork) convention for the project layout. See especially the README link to [the project layout conventions](https://api.csswg.org/bikeshed/?force=1&url=https://raw.githubusercontent.com/vector-of-bool/pitchfork/develop/data/spec.bs) and the [2018 blog post](https://vector-of-bool.github.io/2018/09/16/layout-survey.html).
