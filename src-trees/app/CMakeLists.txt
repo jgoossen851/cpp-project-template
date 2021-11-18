@@ -33,7 +33,7 @@ target_include_directories("${TARGET_NAME}"
 
 # Specify libraries or flags to use when linking a given target and/or its dependents
 target_link_libraries("${TARGET_NAME}"
-    PUBLIC HelloWorld MyMath
+    PRIVATE HelloWorld MyMath
 )
 
 # If install target is built, create a local installation of target
