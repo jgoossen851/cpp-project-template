@@ -26,6 +26,28 @@ git submodule update --init --recursive
 
 to initialize and update the submodules.
 
+## Building
+
+Create a directory for an out-of-source build
+
+```bash
+rm -rf build/
+mkdir build && cd build/
+```
+
+From within the build directory, the following procedure can be run. Using `make` allows multithreading via the `-j` option.
+
+| Procedure                                                    | Using CMake Suite                        | Using make            |
+| ------------------------------------------------------------ | ---------------------------------------- | --------------------- |
+| Generate the Makefile                                        | `cmake ..`                               |                       |
+| Build the project                                            | `cmake --build .`                        | `make`                |
+| Run tests                                                    | `ctest [-VV]`                            | `make test`           |
+| If desired, submit the project to the [CDash CMakeTutorial dashboard](https://my.cdash.org/index.php?project=CMakeTutorial). | `ctest [-VV] -D Experimental`            | `make Experimental`   |
+| Install the program (`cmake` command introduced in 3.15)     | `sudo cmake --install .`                 | `sudo make install`   |
+| Uninstall the program                                        |                                          | `sudo make uninstall` |
+| Create a binary package installer for distribution           | `cpack`                                  | `make package`        |
+| Create a source package installer for distribution           | `cpack --config CPackSourceConfig.cmake` | `make package_source` |
+
 ## Layout Convention
 
 This repo uses a modified [Pitchfork Layout (PFL)](https://github.com/vector-of-bool/pitchfork) convention for the project layout. See especially the README link to [the project layout conventions](https://api.csswg.org/bikeshed/?force=1&url=https://raw.githubusercontent.com/vector-of-bool/pitchfork/develop/data/spec.bs) and the [2018 blog post](https://vector-of-bool.github.io/2018/09/16/layout-survey.html).
