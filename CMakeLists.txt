@@ -36,7 +36,7 @@ if(NOT TARGET uninstall)
     COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)
 endif()
 
-enable_testing()
+include(CTest)
 
 # does the application run?
 add_test(NAME Runs COMMAND Template 25)
