@@ -10,10 +10,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # After a normal build, we can specify the location of various outputs of the
 # build. We put executables and static libraries inside the build directory in
 # bin/ and lib/, respectively.
+# see https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html#output-artifacts
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin")
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib")
 
-configure_file(src-trees/app/include/main.h.in include/main.h)
 
 # add the external library subdirectories
 add_subdirectory(exogenous)
@@ -65,4 +65,20 @@ set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
 set(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")
 set(CPACK_PACKAGE_VERSION_MINOR "${PROJECT_VERSION_MINOR}")
 set(CPACK_PACKAGE_VERSION_PATCH "${PROJECT_VERSION_PATCH}")
+
+# Set the default files to exclude from the source distribution
+set(CPACK_SOURCE_IGNORE_FILES "/CVS/;/\\\\.svn/;/\\\\.bzr/;/\\\\.hg/;/\\\\.git/;\\\\.swp\$;\\\\.#;/#")
+# Attempt to read regexes to ignore from the .gitignore
+# Files are predominately ignored as desired
+file(STRINGS "${CMAKE_CURRENT_SOURCE_DIR}/.gitignore" REGEX_OUT REGEX "^[^#]")
+# Escape characters "." and "-"
+string(REGEX REPLACE "([\\.\\-])" "\\\\\\\\\\1"
+  REGEX_OUT "${REGEX_OUT}"
+)
+# Replace pattern "*" with ".*"
+string(REGEX REPLACE "\\*" ".*"
+  REGEX_OUT "${REGEX_OUT}"
+)
+list(APPEND CPACK_SOURCE_IGNORE_FILES "${REGEX_OUT}")
+
 include(CPack)

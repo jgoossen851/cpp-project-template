@@ -7,7 +7,10 @@ set(SOURCE_FILES
     src/main.cpp
 )
 
+configure_file(include/version.h.in ${PROJECT_BINARY_DIR}/include/version.h)
+
 set(INCLUDE_FILES
+    ${PROJECT_BINARY_DIR}/include/version.h
 )
 
 # Create a new target with the source and header files as dependencies
@@ -30,7 +33,7 @@ target_include_directories("${TARGET_NAME}"
 
 # Specify libraries or flags to use when linking a given target and/or its dependents
 target_link_libraries("${TARGET_NAME}"
-    PUBLIC HelloWorld MyMath
+    PRIVATE HelloWorld MyMath
 )
 
 # If install target is built, create a local installation of target
