@@ -20,6 +20,8 @@ int main(int argc, char* argv[]) {
   // Do some math
   double length = mymath::norm(1, 2, 3);
   std::cout << "The length of the vector (1,2,3) is " << length << std::endl;
+
+  std::cout << "The 4th prime (0 indexed) is: " << mymath::nthPrime(4) << std::endl;
   
   return 0;
 }
