@@ -36,6 +36,9 @@ if(NOT TARGET uninstall)
     COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)
 endif()
 
+# Add documentation
+add_subdirectory(doc)
+
 include(CTest)
 
 # does the application run?
