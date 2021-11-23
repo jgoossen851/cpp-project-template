@@ -8,6 +8,9 @@ find_package(Doxygen
 
 # Add Doxygen documentation
 # set(DOXYGEN_USE_STAMP_FILE YES) # CMake 3.16
+set(DOXYGEN_SOURCE_BROWSER  YES)
+set(DOXYGEN_EXTRACT_ALL     YES)
+set(DOXYGEN_FULL_PATH_NAMES NO)
 doxygen_add_docs(
     docs
     ${PROJECT_SOURCE_DIR}
