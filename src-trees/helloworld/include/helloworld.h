@@ -9,7 +9,7 @@ namespace helloworld {
    * in the source code documentation.
    * \image html Gthumb.svg
    * 
-   * @return int Flag to indicate success (0) or failure (1)
+   * @return int Flag to return exit status (EXIT_SUCCESS or EXIT_FAILURE)
    */
   int sayHelloWorld(void);
 
@@ -19,7 +19,7 @@ namespace helloworld {
    * See [the other page](@ref MoreInfoLink) for more info.
    *
    * @param name Name to personalize the message
-   * @return int Flag to indicate success (0) or failure (1)
+   * @return int Flag to return exit status (EXIT_SUCCESS or EXIT_FAILURE)
    */
   int sayWelcome(char* name);
 

@@ -13,7 +13,7 @@
  * 
  * @param argc Number of arguments
  * @param argv Vector of arguments
- * @return int Flag to indicate success (0) or failure (1)
+ * @return int Flag to return exit status (EXIT_SUCCESS or EXIT_FAILURE)
  */
 int main(int argc, char* argv[]) {
   if (argc < 2) {
@@ -22,7 +22,7 @@ int main(int argc, char* argv[]) {
               << "Minor = " << PROJECT_VERSION_MINOR << ", "
               << "Patch = " << PROJECT_VERSION_PATCH << ")" << std::endl;
     std::cout << "Usage: " << argv[0] << " name" << std::endl;
-    return 1;
+    return EXIT_FAILURE;
   }
   
   // Print greeting
@@ -35,5 +35,5 @@ int main(int argc, char* argv[]) {
 
   std::cout << "The 4th prime (0 indexed) is: " << mymath::nthPrime(4) << std::endl;
   
-  return 0;
+  return EXIT_SUCCESS;
 }
