@@ -23,6 +23,8 @@ set(DOXYGEN_IMAGE_PATH
     "${PROJECT_SOURCE_DIR}/data/images/"
 )
 set(DOXYGEN_REFERENCED_BY_RELATION YES)
+set(DOXYGEN_GENERATE_TREEVIEW YES)
+set(DOXYGEN_PROJECT_LOGO "${PROJECT_SOURCE_DIR}/data/logo/logo.png")
 
 # Attempt to generate as much documentation as possible (for development)
 set(DOXYGEN_EXTRACT_ALL     YES)

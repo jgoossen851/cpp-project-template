@@ -3,6 +3,17 @@
 #include <iostream>
 #include <cstring>
 
+/**
+ * @brief Computes and saves a prime table with primes less than 1000
+ *
+ * The function should be run with the desired file name as the first input
+ * argument. The prime table is saved as a C++ header file at the specified
+ * location.
+ * 
+ * @param argc Number of input arguments
+ * @param argv Vector of input arguments
+ * @return int Flag to indicate success (0) or failure (1)
+ */
 int main(int argc, char* argv[]) {
   // Ensure input argument is given
   if (argc < 2) {

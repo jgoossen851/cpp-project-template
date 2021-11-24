@@ -1,3 +1,5 @@
+/** @file */
+
 #include <iostream>
 #include "version.h"
 #include "helloworld.h"
@@ -5,9 +7,13 @@
 
 /**
  * @brief Main function (entry point)
+ *
+ * The main function prints useage information if incorrect arguments are given.
+ * Otherwise, it prints a greeting and then prints results of some math functions.
  * 
  * @param argc Number of arguments
  * @param argv Vector of arguments
+ * @return int Flag to indicate success (0) or failure (1)
  */
 int main(int argc, char* argv[]) {
   if (argc < 2) {

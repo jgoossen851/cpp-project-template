@@ -1,4 +1,4 @@
-## Dependencies
+## Dependencies {#mainpage}
 
 The project template depends on 
 
