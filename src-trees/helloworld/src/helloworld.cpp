@@ -8,10 +8,10 @@ int helloworld::sayHelloWorld(void) {
   std::cout << ansi::bold
             << "Hello World!"
             << ansi::reset << std::endl;
-  return 0;
+  return EXIT_SUCCESS;
 }
 
 int helloworld::sayWelcome(char* name) {
   std::cout << "Welcome, " << name << "!" << std::endl;
-  return 0;
+  return EXIT_SUCCESS;
 }

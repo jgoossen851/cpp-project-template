@@ -3,10 +3,21 @@
 #include <iostream>
 #include <cstring>
 
+/**
+ * @brief Computes and saves a prime table with primes less than 1000
+ *
+ * The function should be run with the desired file name as the first input
+ * argument. The prime table is saved as a C++ header file at the specified
+ * location.
+ * 
+ * @param argc Number of input arguments
+ * @param argv Vector of input arguments
+ * @return int Flag to return exit status (EXIT_SUCCESS or EXIT_FAILURE)
+ */
 int main(int argc, char* argv[]) {
   // Ensure input argument is given
   if (argc < 2) {
-    return 1;
+    return EXIT_FAILURE;
   }
 
   std::ofstream fout(argv[1], std::ios_base::out);
@@ -40,5 +51,5 @@ int main(int argc, char* argv[]) {
     fout.close();
   }
 
-  return fileOpen ? 0 : 1; // return 0 if wrote the file
+  return fileOpen ? EXIT_SUCCESS : EXIT_FAILURE; // return 0 if wrote the file
 }

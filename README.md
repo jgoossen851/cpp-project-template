@@ -1,6 +1,12 @@
-## Dependencies
+## Dependencies {#mainpage}
 
-This project depends on the following packages:
+The project template depends on 
+
+* CMake
+* Doxygen
+* `graphviz`, for `dot`, for Doxygen.
+
+As a placeholder for project dependecies, this project depends on the following packages:
 
 * [Eigen3](https://eigen.tuxfamily.org/index.php?title=Main_Page)
   
@@ -41,6 +47,7 @@ From within the build directory, the following procedure can be run. Using `make
 | ------------------------------------------------------------ | ---------------------------------------- | --------------------- |
 | Generate the Makefile                                        | `cmake ..`                               |                       |
 | Build the project                                            | `cmake --build .`                        | `make`                |
+| Generate documentation                                       |                                          | `make docs`           |
 | Run tests                                                    | `ctest [-VV]`                            | `make test`           |
 | If desired, submit the project to the [CDash CMakeTutorial dashboard](https://my.cdash.org/index.php?project=CMakeTutorial). | `ctest [-VV] -D Experimental`            | `make Experimental`   |
 | Install the program (`cmake` command introduced in 3.15)     | `sudo cmake --install .`                 | `sudo make install`   |

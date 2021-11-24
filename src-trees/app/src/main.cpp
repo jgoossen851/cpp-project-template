@@ -1,8 +1,20 @@
+/** @file */
+
 #include <iostream>
 #include "version.h"
 #include "helloworld.h"
 #include "mymath.h"
 
+/**
+ * @brief Main function (entry point)
+ *
+ * The main function prints useage information if incorrect arguments are given.
+ * Otherwise, it prints a greeting and then prints results of some math functions.
+ * 
+ * @param argc Number of arguments
+ * @param argv Vector of arguments
+ * @return int Flag to return exit status (EXIT_SUCCESS or EXIT_FAILURE)
+ */
 int main(int argc, char* argv[]) {
   if (argc < 2) {
     std::cout << argv[0] << " Version " << PROJECT_VERSION
@@ -10,7 +22,7 @@ int main(int argc, char* argv[]) {
               << "Minor = " << PROJECT_VERSION_MINOR << ", "
               << "Patch = " << PROJECT_VERSION_PATCH << ")" << std::endl;
     std::cout << "Usage: " << argv[0] << " name" << std::endl;
-    return 1;
+    return EXIT_FAILURE;
   }
   
   // Print greeting
@@ -23,5 +35,5 @@ int main(int argc, char* argv[]) {
 
   std::cout << "The 4th prime (0 indexed) is: " << mymath::nthPrime(4) << std::endl;
   
-  return 0;
+  return EXIT_SUCCESS;
 }
