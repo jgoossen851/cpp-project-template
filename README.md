@@ -50,7 +50,7 @@ From within the build directory, the following procedure can be run. Using `make
 | Generate documentation                                       |                                          | `make docs`           |
 | Run tests                                                    | `ctest [-VV]`                            | `make test`           |
 | If desired, submit the project to the [CDash CMakeTutorial dashboard](https://my.cdash.org/index.php?project=CMakeTutorial). | `ctest [-VV] -D Experimental`            | `make Experimental`   |
-| Install the program (`cmake` command introduced in 3.15)     | `sudo cmake --install .`                 | `sudo make install`   |
+| Install the program (`cmake` command introduced in 3.15)     | ~~`sudo cmake --install .`~~             | `sudo make install`   |
 | Uninstall the program                                        |                                          | `sudo make uninstall` |
 | Create a binary package installer for distribution           | `cpack`                                  | `make package`        |
 | Create a source package installer for distribution           | `cpack --config CPackSourceConfig.cmake` | `make package_source` |
