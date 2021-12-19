@@ -16,6 +16,9 @@ set(INCLUDE_FILES
 # Create a new target with the source and header files as dependencies
 add_executable("${TARGET_NAME}" ${SOURCE_FILES} ${INCLUDE_FILES})
 
+# Set the output name of the binary executable
+set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "run-template")
+
 # The keywords PUBLIC, PRIVATE, and INTERFACE are used for both Include
 # Directories and Link Libraries.
 # * PUBLIC means that other libraries including or linking thistarget should
@@ -38,3 +41,5 @@ target_link_libraries("${TARGET_NAME}"
 
 # If install target is built, create a local installation of target
 install(TARGETS "${TARGET_NAME}" DESTINATION bin)
+# install(FILES ${PATH_TO_INCLUDE_FILES}
+#         DESTINATION include)

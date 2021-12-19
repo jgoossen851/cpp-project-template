@@ -18,12 +18,8 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib")
 # add the external library subdirectories
 add_subdirectory(exogenous)
 
-# add the library subdirectories
-add_subdirectory(src-trees/helloworld)
-add_subdirectory(src-trees/mymath)
-
-# add the executable subdirectory
-add_subdirectory(src-trees/app)
+# add the library and executable subdirectories
+add_subdirectory(src-trees)
 
 # uninstall target (requires root)
 if(NOT TARGET uninstall)
@@ -39,6 +35,8 @@ endif()
 # Add documentation
 add_subdirectory(doc)
 
+
+## TESTING ##
 include(CTest)
 
 # does the application run?
